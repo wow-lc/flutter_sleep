@@ -52,12 +52,12 @@ class Home extends StatelessWidget {
               margin: const EdgeInsets.all(16.0),
               child: Table(children: [
                 TableRow(children: [
-                  _cell("单词列表", "/randonWord",Icons.ac_unit, Colors.blue[200]),
+                  _cell("单词列表", "/randomWord",Icons.ac_unit, Colors.blue[200]),
                   _cell("布局一", "/layoutFirst",Icons.layers, Colors.blue[400]),
                   _cell("待办列表", "/todoList",Icons.featured_play_list, Colors.blue[600])
                 ]),
                 TableRow(children: [
-                  _cell("单词列表", "/randonWord",Icons.ac_unit, Colors.blue[200]),
+                  _cell("单词列表", "/randomWord",Icons.ac_unit, Colors.blue[200]),
                   _cell("布局一", "/layoutFirst",Icons.layers, Colors.blue[400]),
                   _cell("待办列表", "/todoList",Icons.featured_play_list, Colors.blue[600])
                 ])
