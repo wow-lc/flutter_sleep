@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LayoutFirst extends StatelessWidget {
+  static const routeName = "/layoutFirst";
   @override
   Widget build(BuildContext context) {
     // 标题
