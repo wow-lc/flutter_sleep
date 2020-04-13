@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final Color primaryColor = Theme.of(context).primaryColor;
     // 宫格导航
     Widget _cell(String label, String routeName, IconData iconData, Color color) {
       return Card(
@@ -52,14 +53,14 @@ class Home extends StatelessWidget {
               margin: const EdgeInsets.all(16.0),
               child: Table(children: [
                 TableRow(children: [
-                  _cell("单词列表", "/randomWord",Icons.ac_unit, Colors.blue[200]),
-                  _cell("布局一", "/layoutFirst",Icons.layers, Colors.blue[400]),
-                  _cell("待办列表", "/todoList",Icons.featured_play_list, Colors.blue[600])
+                  _cell("单词列表", "/randomWord",Icons.ac_unit, primaryColor),
+                  _cell("布局一", "/layoutFirst",Icons.layers, primaryColor),
+                  _cell("待办列表", "/todoList",Icons.featured_play_list, primaryColor)
                 ]),
                 TableRow(children: [
-                  _cell("单词列表", "/randomWord",Icons.ac_unit, Colors.blue[200]),
-                  _cell("布局一", "/layoutFirst",Icons.layers, Colors.blue[400]),
-                  _cell("待办列表", "/todoList",Icons.featured_play_list, Colors.blue[600])
+                  _cell("聊天chat", "/chatScreen",Icons.chat, primaryColor),
+                  _cell("布局一", "/layoutFirst",Icons.layers, primaryColor),
+                  _cell("待办列表", "/todoList",Icons.featured_play_list, primaryColor)
                 ])
               ]))),
     );
