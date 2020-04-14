@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_sleep/home/home.dart';
+import 'package:flutter_sleep/practices/AnimationExmaple.dart';
 import 'package:flutter_sleep/practices/BatteryManger.dart';
 import 'package:flutter_sleep/practices/FriendChat.dart';
 import 'package:flutter_sleep/practices/LayoutOne.dart';
@@ -32,7 +33,8 @@ void main() => runApp(MaterialApp(
     RandomWord.routeName: (context) => RandomWord(),
     TodoList.routeName: (context) => TodoList(),
     ChatScreen.routeName: (context) => ChatScreen(),
-    BatteryManger.routeName: (context) => BatteryManger()
+    BatteryManger.routeName: (context) => BatteryManger(),
+    AnimationExample.routeName: (context) => AnimationExample()
   }
 ));
 
