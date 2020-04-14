@@ -5,7 +5,7 @@ class LayoutFirst extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 标题
-    Widget titleSection = new Container( // 只有Container才有添加填充，边距，边框或背景色属性s
+    Widget titleSection = new Container( // 只有Container才有添加填充，边距，边框或背景色属性
       padding: const EdgeInsets.all(32.0),
       child: new Row(children: [
         new Expanded(
