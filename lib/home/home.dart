@@ -23,7 +23,7 @@ class Home extends StatelessWidget {
                       style: new TextStyle(
                           fontSize: 14.0,
                           color: Colors.white,
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold), 
                     ),
                   ])),
           onTap: () async { // 采用async await,获取到Navigator.pop返回数据
@@ -59,7 +59,7 @@ class Home extends StatelessWidget {
                 ]),
                 TableRow(children: [
                   _cell("聊天chat", "/chatScreen",Icons.chat, primaryColor),
-                  _cell("布局一", "/layoutFirst",Icons.layers, primaryColor),
+                  _cell("电量管理", "/batteryManger",Icons.battery_charging_full, primaryColor),
                   _cell("待办列表", "/todoList",Icons.featured_play_list, primaryColor)
                 ])
               ]))),

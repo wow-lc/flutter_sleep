@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_sleep/home/home.dart';
+import 'package:flutter_sleep/practices/BatteryManger.dart';
 import 'package:flutter_sleep/practices/friend_chat.dart';
 import 'package:flutter_sleep/practices/layout_first.dart';
 import 'package:flutter_sleep/practices/random_word.dart';
@@ -14,7 +15,7 @@ final ThemeData kIosTheme = new ThemeData(
   primaryColorBrightness: Brightness.light
 );
 final ThemeData kAndroidTheme = new ThemeData(
-   primarySwatch: Colors.purple,
+  primarySwatch: Colors.purple,
   accentColor: Colors.orangeAccent[400]
 );
 
@@ -29,7 +30,8 @@ void main() => runApp(MaterialApp(
     LayoutFirst.routeName: (context) => LayoutFirst(),
     RandomWord.routeName: (context) => RandomWord(),
     TodoList.routeName: (context) => TodoList(),
-    ChatScreen.routeName: (context) => ChatScreen()
+    ChatScreen.routeName: (context) => ChatScreen(),
+    BatteryManger.routeName: (context) => BatteryManger()
   }
 ));
 
