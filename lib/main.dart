@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_sleep/home/home.dart';
 import 'package:flutter_sleep/practices/BatteryManger.dart';
-import 'package:flutter_sleep/practices/friend_chat.dart';
-import 'package:flutter_sleep/practices/layout_first.dart';
-import 'package:flutter_sleep/practices/random_word.dart';
-import 'package:flutter_sleep/practices/todo_list.dart';
+import 'package:flutter_sleep/practices/FriendChat.dart';
+import 'package:flutter_sleep/practices/LayoutOne.dart';
+import 'package:flutter_sleep/practices/RandomWord.dart';
+import 'package:flutter_sleep/practices/TodoList.dart';
+
 
 // 自定义主题
 final ThemeData kIosTheme = new ThemeData(

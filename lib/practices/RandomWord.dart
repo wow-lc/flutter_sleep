@@ -1,30 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
-class RandomWord extends StatelessWidget {
-  static const routeName = "/randomWord";
-
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Welcome to Flutter',
-      home: new RandomWords(),
-      theme: new ThemeData(
-        primaryColor: Colors.white
-      ),
-    );
-  }
-}
-
 // 有状态组件
-class RandomWords extends StatefulWidget {
+class RandomWord extends StatefulWidget {
+  static const routeName = "/randomWord";
   @override
   State<StatefulWidget> createState() {
-    return new RandomWordsState();
+    return RandomWordState();
   }
 }
 
-class RandomWordsState extends State<RandomWords> {
+class RandomWordState extends State<RandomWord> {
   // 在Dart中 已“_”下划线前缀，会强制变成私有的
   final _suggestions = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 18.0);
