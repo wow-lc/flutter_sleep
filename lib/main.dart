@@ -5,6 +5,7 @@ import 'package:flutter_sleep/home/home.dart';
 import 'package:flutter_sleep/practices/AnimationExmaple.dart';
 import 'package:flutter_sleep/practices/BatteryManger.dart';
 import 'package:flutter_sleep/practices/FriendChat.dart';
+import 'package:flutter_sleep/practices/HttpExmaple.dart';
 import 'package:flutter_sleep/practices/LayoutOne.dart';
 import 'package:flutter_sleep/practices/RandomWord.dart';
 import 'package:flutter_sleep/practices/TodoList.dart';
@@ -34,7 +35,8 @@ void main() => runApp(MaterialApp(
     TodoList.routeName: (context) => TodoList(),
     ChatScreen.routeName: (context) => ChatScreen(),
     BatteryManger.routeName: (context) => BatteryManger(),
-    AnimationExample.routeName: (context) => AnimationExample()
+    AnimationExample.routeName: (context) => AnimationExample(),
+    HttpExmaple.routeName: (context) => HttpExmaple()
   }
 ));
 

@@ -61,6 +61,11 @@ class Home extends StatelessWidget {
                   _cell("聊天chat", "/chatScreen",Icons.chat, primaryColor),
                   _cell("电量管理", "/batteryManger",Icons.battery_charging_full, primaryColor),
                   _cell("动 画", "/animation",Icons.crop_rotate, primaryColor)
+                ]),
+                TableRow(children: [
+                  _cell("网络请求", "/httpExmaple",Icons.http, primaryColor),
+                  _cell("电量管理", "/batteryManger",Icons.battery_charging_full, primaryColor),
+                  _cell("动 画", "/animation",Icons.crop_rotate, primaryColor)
                 ])
               ]))),
     );
