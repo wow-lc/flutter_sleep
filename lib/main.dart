@@ -10,36 +10,37 @@ import 'package:flutter_sleep/practices/LayoutOne.dart';
 import 'package:flutter_sleep/practices/RandomWord.dart';
 import 'package:flutter_sleep/practices/TodoList.dart';
 
-
 // 自定义主题
 final ThemeData kIosTheme = new ThemeData(
-  primarySwatch: Colors.orange,
-  primaryColor: Colors.grey[100],
-  primaryColorBrightness: Brightness.light
-);
+    primarySwatch: Colors.orange,
+    primaryColor: Colors.grey[100],
+    primaryColorBrightness: Brightness.light);
 final ThemeData kAndroidTheme = new ThemeData(
-  primarySwatch: Colors.purple,
-  accentColor: Colors.orangeAccent[400]
-);
+    primarySwatch: Colors.purple, accentColor: Colors.orangeAccent[400]);
 
-void main() => runApp(MaterialApp(
-  title: "MINE FLUTTER APP",
-  theme: defaultTargetPlatform == TargetPlatform.iOS 
-    ? kIosTheme
-    : kAndroidTheme,
-  initialRoute: "/",
-  routes: {
-    "/": (context) => Home(),
-    LayoutFirst.routeName: (context) => LayoutFirst(),
-    RandomWord.routeName: (context) => RandomWord(),
-    TodoList.routeName: (context) => TodoList(),
-    ChatScreen.routeName: (context) => ChatScreen(),
-    BatteryManger.routeName: (context) => BatteryManger(),
-    AnimationExample.routeName: (context) => AnimationExample(),
-    HttpExmaple.routeName: (context) => HttpExmaple()
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: "MINE FLUTTER APP",
+        theme: defaultTargetPlatform == TargetPlatform.iOS
+            ? kIosTheme
+            : kAndroidTheme,
+        initialRoute: "/",
+        routes: {
+          "/": (context) => Home(),
+          LayoutFirst.routeName: (context) => LayoutFirst(),
+          RandomWord.routeName: (context) => RandomWord(),
+          TodoList.routeName: (context) => TodoList(),
+          ChatScreen.routeName: (context) => ChatScreen(),
+          BatteryManger.routeName: (context) => BatteryManger(),
+          AnimationExample.routeName: (context) => AnimationExample(),
+          HttpExmaple.routeName: (context) => HttpExmaple()
+        });
   }
-));
-
+}
 /**
  * 待理解： 
  *  1.onGenerateRoute页面传值
