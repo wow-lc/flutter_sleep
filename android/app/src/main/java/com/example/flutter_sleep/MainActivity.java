@@ -28,7 +28,8 @@ public class MainActivity extends FlutterActivity {
   private MethodChannel methodChannel;
 
   @Override
-  public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
     Context context = getApplicationContext();
     // 获取当前包名
     String packageName = context.getPackageName();
@@ -39,6 +40,10 @@ public class MainActivity extends FlutterActivity {
     strategy.setUploadProcess(processName == null || processName.equals(packageName));
     // 初始化Bugly
     CrashReport.initCrashReport(getApplicationContext(), "4c086a4171", true);
+  }
+
+  @Override
+  public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
     GeneratedPluginRegistrant.registerWith(flutterEngine);
     methodChannel = new MethodChannel(flutterEngine.getDartExecutor(), CHANNEL);
     methodChannel.setMethodCallHandler(new MethodChannel.MethodCallHandler() {
@@ -46,7 +51,6 @@ public class MainActivity extends FlutterActivity {
       public void onMethodCall(MethodCall call, MethodChannel.Result result) {
         if (call.method.equals("getBatteryLevel")) {
           int batteryLevel = getBatteryLevel();
-
           if (batteryLevel != -1) {
             result.success(batteryLevel);
           } else {

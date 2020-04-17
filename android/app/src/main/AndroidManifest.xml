@@ -10,10 +10,13 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
+    <!-- 在Android P 使用HttpUrlConnection进行http请求会出现异常 
+         解决： android:usesCleartextTraffic="true" -->
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="flutter_sleep"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true">  
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
