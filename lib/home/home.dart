@@ -65,7 +65,7 @@ class Home extends StatelessWidget {
                 TableRow(children: [
                   _cell("网络请求", "/httpExmaple",Icons.http, primaryColor),
                   _cell("电量管理", "/batteryManger",Icons.battery_charging_full, primaryColor),
-                  _cell("动 画", "/animation",Icons.crop_rotate, primaryColor)
+                  _cell("路由拦截", "/needLogin",Icons.not_interested, primaryColor)
                 ])
               ]))),
       floatingActionButton: new FloatingActionButton(

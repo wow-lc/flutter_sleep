@@ -77,5 +77,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
     implementation 'com.tencent.bugly:crashreport:latest.release'
-    implementation 'com.tencent.bugly:nativecrashreport:latest.release' 
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    implementation 'com.android.support:support-compat:27.1.1'
 }

@@ -9,6 +9,7 @@ import 'package:flutter_sleep/practices/HttpExmaple.dart';
 import 'package:flutter_sleep/practices/LayoutOne.dart';
 import 'package:flutter_sleep/practices/RandomWord.dart';
 import 'package:flutter_sleep/practices/TodoList.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 // 自定义主题
 final ThemeData kIosTheme = new ThemeData(
@@ -38,12 +39,30 @@ class MyApp extends StatelessWidget {
           BatteryManger.routeName: (context) => BatteryManger(),
           AnimationExample.routeName: (context) => AnimationExample(),
           HttpExmaple.routeName: (context) => HttpExmaple()
-        });
+        },
+        onGenerateRoute: (RouteSettings routeSettings){ // 路由钩子
+          WidgetBuilder builder;
+          String routeName = routeSettings.name;
+          print(routeSettings);
+          if(routeName == '/needLogin') {
+          Fluttertoast.showToast(
+            msg: "未登录，请先登录",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIos: 1,
+          );
+            builder = (BuildContext buildContext) =>  Home();
+          }
+
+          return new MaterialPageRoute(builder: builder, settings: routeSettings);
+        },
+    );
   }
 }
 /**
  * 待理解： 
  *  1.onGenerateRoute页面传值
  *    https://api.flutter.dev/flutter/widgets/WidgetsApp/onGenerateRoute.html
+ *  注意: onGenerateRoute只对命名路由生效
  * 
  */
