@@ -68,6 +68,10 @@ class Home extends StatelessWidget {
                   _cell("动 画", "/animation",Icons.crop_rotate, primaryColor)
                 ])
               ]))),
+      floatingActionButton: new FloatingActionButton(
+        tooltip: '悬浮按钮',
+        child: new Icon(Icons.add), onPressed: () {},
+      ),
     );
   }
 }
