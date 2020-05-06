@@ -79,4 +79,7 @@ dependencies {
     implementation 'com.tencent.bugly:crashreport:latest.release'
     implementation 'com.tencent.bugly:nativecrashreport:latest.release'
     implementation 'com.android.support:support-compat:27.1.1'
+
+    // 向下兼容
+    implementation 'androidx.annotation:annotation:1.0.0'
 }
