@@ -17,6 +17,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+// 引入
+import android.os.Build;
+import android.os.Bundle;
+
 import io.flutter.embedding.android.FlutterActivity;
 import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.plugin.common.MethodCall;
@@ -40,6 +44,11 @@ public class MainActivity extends FlutterActivity {
     strategy.setUploadProcess(processName == null || processName.equals(packageName));
     // 初始化Bugly
     CrashReport.initCrashReport(getApplicationContext(), "4c086a4171", true);
+
+    // 设置透明状态栏
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      getWindow().setStatusBarColor(0);
+    }
   }
 
   @Override
