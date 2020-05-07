@@ -2,6 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'dart:math' as math;
 
+import 'package:flutter_sleep/practices/LayoutOne.dart';
+
+List<Widget> pages = [
+  LayoutFirst(),
+  HomeGrid(),
+  LayoutFirst(),
+  HomeGrid()
+];
 class Home extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -37,19 +45,32 @@ class HomeState extends State<Home> {
       ),
       IconButton(
         icon: Icon(Icons.photo_filter),
+        color: _selectedIndex == 2 ? Colors.red : Colors.grey,
+        onPressed: () {
+          _onItemTap(2);
+        },
+      ),
+      IconButton(
+        icon: Icon(Icons.face),
         color: _selectedIndex == 3 ? Colors.red : Colors.grey,
         onPressed: () {
           _onItemTap(3);
         },
       ),
-      IconButton(
-        icon: Icon(Icons.face),
-        color: _selectedIndex == 4 ? Colors.red : Colors.grey,
-        onPressed: () {
-          _onItemTap(4);
-        },
-      ),
     ];
+
+    List<IconData> iconDateList = [
+      Icons.home,
+      Icons.search,
+      Icons.photo_filter,
+      Icons.face
+    ];
+
+    List<Widget> _createBottomWidget(index) {
+      List<Widget>  widgets = bottomChildren;
+      widgets[index] = SizedBox(width: 50.0);
+      return widgets;
+    }
 
     return new Scaffold(
       appBar: new AppBar(
@@ -63,24 +84,24 @@ class HomeState extends State<Home> {
               onPressed: null)
         ],
       ),
-      body: HomeGrid(),
+      body: pages[_selectedIndex],
       bottomNavigationBar: BottomAppBar(
           color: Colors.white,
           shape: CircularNotchedRectangle(),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: bottomChildren)),
+              children: _createBottomWidget(_selectedIndex))),
       floatingActionButton: new FloatingActionButton(
-        backgroundColor: _selectedIndex == 2 ? Colors.red : Colors.grey,
+        backgroundColor: Colors.red,
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Icon(
-            Icons.add,
+            iconDateList[_selectedIndex],
             color: Colors.white,
           )
         ]),
         onPressed: () => {
           setState(() {
-            _selectedIndex = 2;
+            _selectedIndex = _selectedIndex;
           })
         },
       ),
@@ -196,10 +217,8 @@ class _CenterDockedFloatingActionButtonLocation
 
   @override
   Offset getOffset(ScaffoldPrelayoutGeometry scaffoldGeometry) {
-    final double fabX = (scaffoldGeometry.scaffoldSize.width -
-            scaffoldGeometry.floatingActionButtonSize.width) /
-        4 *
-        this.positionX;
+    final double fabX =
+        scaffoldGeometry.scaffoldSize.width / 4 * this.positionX + scaffoldGeometry.floatingActionButtonSize.width /2;
     return Offset(fabX, getDockedY(scaffoldGeometry));
   }
 

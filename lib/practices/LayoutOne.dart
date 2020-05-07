@@ -104,26 +104,29 @@ class LayoutFirst extends StatelessWidget {
       ),
     );
 
-    return new MaterialApp(
+    return MaterialApp(
         title: 'Welcome to Flutter',
-        home: new Scaffold(
-          body: new ListView(
-            children: [
-              Hero(
-                  tag: "lake-img",
-                  child: new Image.asset(
-                    'images/lake.jpg',
-                    width: 600.0,
-                    height: 240.0,
-                    fit: BoxFit.cover,
-                  )),
-              titleSection,
-              buttonSection,
-              textSection,
-              ratings
-            ],
-          ),
-        ));
+        home:  Scaffold(
+                body: MediaQuery.removePadding( // 沉浸式状态栏
+              removeTop: true,
+              context: context,
+              child: ListView(
+                children: [
+                  Hero(
+                      tag: "lake-img",
+                      child: Image.asset(
+                        'images/lake.jpg',
+                        width: 600.0,
+                        height: 240.0,
+                        fit: BoxFit.cover,
+                      )),
+                  titleSection,
+                  buttonSection,
+                  textSection,
+                  ratings
+                ],
+              ),
+            )));
   }
 }
 /**
